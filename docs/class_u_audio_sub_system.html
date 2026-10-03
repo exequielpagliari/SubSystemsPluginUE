@@ -105,10 +105,13 @@ $(function(){initNavTree('class_u_audio_sub_system.html',''); initResizable(true
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_u_audio_sub_system-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UAudioSubSystem Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_audio_sub_system_8h_source.html">AudioSubSystem.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for UAudioSubSystem:</div>
 <div class="dyncontent">
@@ -133,16 +136,155 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ReceiveInitialize</b>
 <tr class="memitem:a08025c95b89d06e0c94a1bae45bbeed2" id="r_a08025c95b89d06e0c94a1bae45bbeed2"><td class="memItemLeft" align="right" valign="top"><a id="a08025c95b89d06e0c94a1bae45bbeed2" name="a08025c95b89d06e0c94a1bae45bbeed2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ReceiveDeinitialize</b> ()</td></tr>
 <tr class="separator:a08025c95b89d06e0c94a1bae45bbeed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e41158c35660e5b8f2e41f1e892d4af" id="r_a2e41158c35660e5b8f2e41f1e892d4af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e41158c35660e5b8f2e41f1e892d4af">PlayMusic</a> (USoundBase *NewTrack, float FadeInTime=1.5f, float FadeOutTime=1.5f, bool bLoop=true)</td></tr>
+<tr class="separator:a2e41158c35660e5b8f2e41f1e892d4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addedc0dad70a86721de4b3afde6acd3c" id="r_addedc0dad70a86721de4b3afde6acd3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addedc0dad70a86721de4b3afde6acd3c">StopMusic</a> (float FadeOutTime=1.5f)</td></tr>
+<tr class="separator:addedc0dad70a86721de4b3afde6acd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504605fc502f0d64e6e5e8a1d811a36e" id="r_a504605fc502f0d64e6e5e8a1d811a36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a504605fc502f0d64e6e5e8a1d811a36e">PlaySound2D</a> (USoundBase *Sound, float VolumeMultiplier=1.0f, float PitchMultiplier=1.0f)</td></tr>
+<tr class="separator:a504605fc502f0d64e6e5e8a1d811a36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2029099a92d7334af111bccf177833" id="r_a4e2029099a92d7334af111bccf177833"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e2029099a92d7334af111bccf177833">SetChannelVolume</a> (USoundClass *TargetClass, float Volume)</td></tr>
+<tr class="separator:a4e2029099a92d7334af111bccf177833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6aacf2f458323cc26dcb2169e0db6a16" id="r_a6aacf2f458323cc26dcb2169e0db6a16"><td class="memItemLeft" align="right" valign="top"><a id="a6aacf2f458323cc26dcb2169e0db6a16" name="a6aacf2f458323cc26dcb2169e0db6a16"></a>
 virtual UWorld *&#160;</td><td class="memItemRight" valign="bottom"><b>GetWorld</b> () const override</td></tr>
 <tr class="separator:a6aacf2f458323cc26dcb2169e0db6a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a0e0ff6157f7b15cc07e8c2a1748980a6" id="r_a0e0ff6157f7b15cc07e8c2a1748980a6"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; USoundMix &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e0ff6157f7b15cc07e8c2a1748980a6">MainSoundMix</a></td></tr>
+<tr class="separator:a0e0ff6157f7b15cc07e8c2a1748980a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Subsystem global para la gestión de audio, música con fading y control de volumen por canales. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2e41158c35660e5b8f2e41f1e892d4af" name="a2e41158c35660e5b8f2e41f1e892d4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e41158c35660e5b8f2e41f1e892d4af">&#9670;&#160;</a></span>PlayMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UAudioSubSystem::PlayMusic </td>
+          <td>(</td>
+          <td class="paramtype">USoundBase *</td>          <td class="paramname"><span class="paramname"><em>NewTrack</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>FadeInTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.5f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>FadeOutTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.5f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bLoop</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reproduce una pista de música con transición suave (Crossfade) desde la pista actual. </p>
+
+</div>
+</div>
+<a id="a504605fc502f0d64e6e5e8a1d811a36e" name="a504605fc502f0d64e6e5e8a1d811a36e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504605fc502f0d64e6e5e8a1d811a36e">&#9670;&#160;</a></span>PlaySound2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UAudioSubSystem::PlaySound2D </td>
+          <td>(</td>
+          <td class="paramtype">USoundBase *</td>          <td class="paramname"><span class="paramname"><em>Sound</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>VolumeMultiplier</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>PitchMultiplier</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reproduce un efecto de sonido 2D (sin ubicación espacial) para UI o feedback general. </p>
+
+</div>
+</div>
+<a id="a4e2029099a92d7334af111bccf177833" name="a4e2029099a92d7334af111bccf177833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2029099a92d7334af111bccf177833">&#9670;&#160;</a></span>SetChannelVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UAudioSubSystem::SetChannelVolume </td>
+          <td>(</td>
+          <td class="paramtype">USoundClass *</td>          <td class="paramname"><span class="paramname"><em>TargetClass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>Volume</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Modifica el volumen de un SoundClass específico (0.0 a 1.0). </p>
+
+</div>
+</div>
+<a id="addedc0dad70a86721de4b3afde6acd3c" name="addedc0dad70a86721de4b3afde6acd3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addedc0dad70a86721de4b3afde6acd3c">&#9670;&#160;</a></span>StopMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UAudioSubSystem::StopMusic </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>FadeOutTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.5f</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Detiene la música actual con un Fade Out. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0e0ff6157f7b15cc07e8c2a1748980a6" name="a0e0ff6157f7b15cc07e8c2a1748980a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0ff6157f7b15cc07e8c2a1748980a6">&#9670;&#160;</a></span>MainSoundMix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TObjectPtr&lt;USoundMix&gt; UAudioSubSystem::MainSoundMix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Referencia al SoundMix principal usado para aplicar modificaciones de volumen en caliente. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/<a class="el" href="_audio_sub_system_8h_source.html">AudioSubSystem.h</a></li>
-<li>C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Private/<b>AudioSubSystem.cpp</b></li>
+<li>C:/01_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/<a class="el" href="_audio_sub_system_8h_source.html">AudioSubSystem.h</a></li>
+<li>C:/01_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Private/<b>AudioSubSystem.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
