@@ -29,7 +29,9 @@ public class SubSystems : ModuleRules
                 "Core",
 				"CoreUObject", // Muévelo aquí
 				"Engine",      // Muévelo aquí
-				"InputCore"    // Añádelo por si acaso
+				"InputCore",    // Añádelo por si acaso
+				"RenderCore",
+                "RHI",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
