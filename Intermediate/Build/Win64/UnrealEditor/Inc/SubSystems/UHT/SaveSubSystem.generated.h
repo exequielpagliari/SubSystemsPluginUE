@@ -16,22 +16,35 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UClass;
+class USaveGame;
 
 // ********** Begin Class USaveSubSystem ***********************************************************
-#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_CALLBACK_WRAPPERS
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execDeleteSaveGameSlot); \
+	DECLARE_FUNCTION(execDoesSaveGameExist); \
+	DECLARE_FUNCTION(execLoadGameFromSlotAsync); \
+	DECLARE_FUNCTION(execSaveGameToSlotAsync); \
+	DECLARE_FUNCTION(execLoadGameFromSlotSync); \
+	DECLARE_FUNCTION(execSaveGameToSlotSync); \
+	DECLARE_FUNCTION(execGetCurrentSaveGameObject); \
+	DECLARE_FUNCTION(execGetOrCreateSaveGameObject);
+
+
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_CALLBACK_WRAPPERS
 struct Z_Construct_UClass_USaveSubSystem_Statics;
 SUBSYSTEMS_API UClass* Z_Construct_UClass_USaveSubSystem(ETypeConstructPhase);
 
-#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	friend struct ::Z_Construct_UClass_USaveSubSystem_Statics; \
 	friend SUBSYSTEMS_API UClass* ::Z_Construct_UClass_USaveSubSystem(ETypeConstructPhase); \
 public: \
-	DECLARE_CLASS2(USaveSubSystem, UGameInstanceSubsystem, COMPILED_IN_FLAGS(CLASS_Abstract), CASTCLASS_None, TEXT("/Script/SubSystems"), Z_Construct_UClass_USaveSubSystem) \
+	DECLARE_CLASS2(USaveSubSystem, UGameInstanceSubsystem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SubSystems"), Z_Construct_UClass_USaveSubSystem) \
 	DECLARE_SERIALIZER(USaveSubSystem)
 
 
-#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USaveSubSystem(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -39,17 +52,18 @@ public: \
 	USaveSubSystem(const USaveSubSystem&) = delete; \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USaveSubSystem); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USaveSubSystem); \
-	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USaveSubSystem) \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USaveSubSystem) \
 	NO_API virtual ~USaveSubSystem();
 
 
-#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_12_PROLOG
-#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_GENERATED_BODY \
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_16_PROLOG
+#define FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_CALLBACK_WRAPPERS \
-	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_INCLASS_NO_PURE_DECLS \
-	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_15_ENHANCED_CONSTRUCTORS \
+	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_CALLBACK_WRAPPERS \
+	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_INCLASS_NO_PURE_DECLS \
+	FID_01_ACTIVO_Plugin58_Plugins_SubSystemsPluginUE_Source_SubSystems_Public_SaveSubSystem_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
