@@ -1,5 +1,9 @@
 \doxysection{UAudio\+Sub\+System Class Reference}
 \hypertarget{class_u_audio_sub_system}{}\label{class_u_audio_sub_system}\index{UAudioSubSystem@{UAudioSubSystem}}
+
+
+{\ttfamily \#include $<$Audio\+Sub\+System.\+h$>$}
+
 Inheritance diagram for UAudio\+Sub\+System\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,6 +27,14 @@ void {\bfseries Receive\+Initialize} ()
 \item 
 \Hypertarget{class_u_audio_sub_system_a08025c95b89d06e0c94a1bae45bbeed2}\label{class_u_audio_sub_system_a08025c95b89d06e0c94a1bae45bbeed2} 
 void {\bfseries Receive\+Deinitialize} ()
+\item 
+void \mbox{\hyperlink{class_u_audio_sub_system_a2e41158c35660e5b8f2e41f1e892d4af}{Play\+Music}} (USound\+Base \texorpdfstring{$\ast$}{*}New\+Track, float Fade\+In\+Time=1.\+5f, float Fade\+Out\+Time=1.\+5f, bool b\+Loop=true)
+\item 
+void \mbox{\hyperlink{class_u_audio_sub_system_addedc0dad70a86721de4b3afde6acd3c}{Stop\+Music}} (float Fade\+Out\+Time=1.\+5f)
+\item 
+void \mbox{\hyperlink{class_u_audio_sub_system_a504605fc502f0d64e6e5e8a1d811a36e}{Play\+Sound2D}} (USound\+Base \texorpdfstring{$\ast$}{*}Sound, float Volume\+Multiplier=1.\+0f, float Pitch\+Multiplier=1.\+0f)
+\item 
+void \mbox{\hyperlink{class_u_audio_sub_system_a4e2029099a92d7334af111bccf177833}{Set\+Channel\+Volume}} (USound\+Class \texorpdfstring{$\ast$}{*}Target\+Class, float Volume)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -30,9 +42,53 @@ void {\bfseries Receive\+Deinitialize} ()
 \Hypertarget{class_u_audio_sub_system_a6aacf2f458323cc26dcb2169e0db6a16}\label{class_u_audio_sub_system_a6aacf2f458323cc26dcb2169e0db6a16} 
 virtual UWorld \texorpdfstring{$\ast$}{*} {\bfseries Get\+World} () const override
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TObject\+Ptr$<$ USound\+Mix $>$ \mbox{\hyperlink{class_u_audio_sub_system_a0e0ff6157f7b15cc07e8c2a1748980a6}{Main\+Sound\+Mix}}
+\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Subsystem global para la gestión de audio, música con fading y control de volumen por canales. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_audio_sub_system_a2e41158c35660e5b8f2e41f1e892d4af}\index{UAudioSubSystem@{UAudioSubSystem}!PlayMusic@{PlayMusic}}
+\index{PlayMusic@{PlayMusic}!UAudioSubSystem@{UAudioSubSystem}}
+\doxysubsubsection{\texorpdfstring{PlayMusic()}{PlayMusic()}}
+{\footnotesize\ttfamily \label{class_u_audio_sub_system_a2e41158c35660e5b8f2e41f1e892d4af} 
+void UAudio\+Sub\+System\+::\+Play\+Music (\begin{DoxyParamCaption}\item[{USound\+Base \texorpdfstring{$\ast$}{*}}]{New\+Track}{, }\item[{float}]{Fade\+In\+Time}{ = {\ttfamily 1.5f}, }\item[{float}]{Fade\+Out\+Time}{ = {\ttfamily 1.5f}, }\item[{bool}]{b\+Loop}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+Reproduce una pista de música con transición suave (Crossfade) desde la pista actual. \Hypertarget{class_u_audio_sub_system_a504605fc502f0d64e6e5e8a1d811a36e}\index{UAudioSubSystem@{UAudioSubSystem}!PlaySound2D@{PlaySound2D}}
+\index{PlaySound2D@{PlaySound2D}!UAudioSubSystem@{UAudioSubSystem}}
+\doxysubsubsection{\texorpdfstring{PlaySound2D()}{PlaySound2D()}}
+{\footnotesize\ttfamily \label{class_u_audio_sub_system_a504605fc502f0d64e6e5e8a1d811a36e} 
+void UAudio\+Sub\+System\+::\+Play\+Sound2D (\begin{DoxyParamCaption}\item[{USound\+Base \texorpdfstring{$\ast$}{*}}]{Sound}{, }\item[{float}]{Volume\+Multiplier}{ = {\ttfamily 1.0f}, }\item[{float}]{Pitch\+Multiplier}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+Reproduce un efecto de sonido 2D (sin ubicación espacial) para UI o feedback general. \Hypertarget{class_u_audio_sub_system_a4e2029099a92d7334af111bccf177833}\index{UAudioSubSystem@{UAudioSubSystem}!SetChannelVolume@{SetChannelVolume}}
+\index{SetChannelVolume@{SetChannelVolume}!UAudioSubSystem@{UAudioSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetChannelVolume()}{SetChannelVolume()}}
+{\footnotesize\ttfamily \label{class_u_audio_sub_system_a4e2029099a92d7334af111bccf177833} 
+void UAudio\+Sub\+System\+::\+Set\+Channel\+Volume (\begin{DoxyParamCaption}\item[{USound\+Class \texorpdfstring{$\ast$}{*}}]{Target\+Class}{, }\item[{float}]{Volume}{}\end{DoxyParamCaption})}
+
+Modifica el volumen de un Sound\+Class específico (0.\+0 a 1.\+0). \Hypertarget{class_u_audio_sub_system_addedc0dad70a86721de4b3afde6acd3c}\index{UAudioSubSystem@{UAudioSubSystem}!StopMusic@{StopMusic}}
+\index{StopMusic@{StopMusic}!UAudioSubSystem@{UAudioSubSystem}}
+\doxysubsubsection{\texorpdfstring{StopMusic()}{StopMusic()}}
+{\footnotesize\ttfamily \label{class_u_audio_sub_system_addedc0dad70a86721de4b3afde6acd3c} 
+void UAudio\+Sub\+System\+::\+Stop\+Music (\begin{DoxyParamCaption}\item[{float}]{Fade\+Out\+Time}{ = {\ttfamily 1.5f}}\end{DoxyParamCaption})}
+
+Detiene la música actual con un Fade Out. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_u_audio_sub_system_a0e0ff6157f7b15cc07e8c2a1748980a6}\index{UAudioSubSystem@{UAudioSubSystem}!MainSoundMix@{MainSoundMix}}
+\index{MainSoundMix@{MainSoundMix}!UAudioSubSystem@{UAudioSubSystem}}
+\doxysubsubsection{\texorpdfstring{MainSoundMix}{MainSoundMix}}
+{\footnotesize\ttfamily \label{class_u_audio_sub_system_a0e0ff6157f7b15cc07e8c2a1748980a6} 
+TObject\+Ptr$<$USound\+Mix$>$ UAudio\+Sub\+System\+::\+Main\+Sound\+Mix\hspace{0.3cm}{\ttfamily [protected]}}
+
+Referencia al Sound\+Mix principal usado para aplicar modificaciones de volumen en caliente. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/exepa/\+Desktop/\+Sub\+Systems\+UE/\+Source/\+Sub\+Systems/\+Public/Audio\+Sub\+System.\+h\item 
-C\+:/\+Users/exepa/\+Desktop/\+Sub\+Systems\+UE/\+Source/\+Sub\+Systems/\+Private/Audio\+Sub\+System.\+cpp\end{DoxyCompactItemize}
+C\+:/01\+\_\+\+ACTIVO/\+Plugin58/\+Plugins/\+Sub\+Systems\+Plugin\+UE/\+Source/\+Sub\+Systems/\+Public/Audio\+Sub\+System.\+h\item 
+C\+:/01\+\_\+\+ACTIVO/\+Plugin58/\+Plugins/\+Sub\+Systems\+Plugin\+UE/\+Source/\+Sub\+Systems/\+Private/Audio\+Sub\+System.\+cpp\end{DoxyCompactItemize}

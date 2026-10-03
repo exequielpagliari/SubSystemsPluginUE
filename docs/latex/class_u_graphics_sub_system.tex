@@ -20,10 +20,109 @@ void {\bfseries Receive\+Initialize} ()
 \item 
 \Hypertarget{class_u_graphics_sub_system_a94d1d4b051b516f8f416b57842c7fa3f}\label{class_u_graphics_sub_system_a94d1d4b051b516f8f416b57842c7fa3f} 
 void {\bfseries Receive\+Deinitialize} ()
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_ab42c28e06e7e86ebdae7a6c96898f266}{Set\+Screen\+Resolution}} (FInt\+Point Resolution, EWindow\+Mode\+::\+Type Window\+Mode)
+\item 
+FInt\+Point \mbox{\hyperlink{class_u_graphics_sub_system_af3826e84d06acc33278ec9bc3a527f11}{Get\+Screen\+Resolution}} () const
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_a922ab3e6f97470d0060f34b4cfaea95c}{Set\+Frame\+Rate\+Limit}} (float Frame\+Rate)
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_aa044e0da554e8e54dbd3e59b0e794217}{Set\+VSync\+Enabled}} (bool b\+Enable)
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_a557ac16f538b9822834cdbaa1386bd57}{Set\+Overall\+Graphics\+Quality}} (int32 Quality\+Level)
+\item 
+int32 \mbox{\hyperlink{class_u_graphics_sub_system_aa4eb1571e3e55f276bdd930b34ea0208}{Get\+Overall\+Graphics\+Quality}} () const
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_a5144d741a5563e868c6ec24b79f0de27}{Set\+Shadow\+Quality}} (int32 Quality\+Level)
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_a53318c0c060eb73b9afd30bdcf8aacee}{Set\+Texture\+Quality}} (int32 Quality\+Level)
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_a0b9d682451bfe3d178ae19ca2bd0add1}{Set\+Resolution\+Scale}} (float Scale\+Percentage)
+\item 
+TArray$<$ \mbox{\hyperlink{struct_f_supported_resolution}{FSupported\+Resolution}} $>$ \mbox{\hyperlink{class_u_graphics_sub_system_a11f7341405eef769d2906cdd69365412}{Get\+Supported\+Screen\+Resolutions}} () const
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_ae0c520fd9be8b989843c92e9ff75d734}{Save\+And\+Apply\+Settings}} (bool b\+Check\+For\+Command\+Line\+Overrides=false)
+\item 
+void \mbox{\hyperlink{class_u_graphics_sub_system_ab08268ee7e043e9ae5625b77ad75826d}{Run\+Hardware\+Benchmark}} ()
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_graphics_sub_system_aa4eb1571e3e55f276bdd930b34ea0208}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!GetOverallGraphicsQuality@{GetOverallGraphicsQuality}}
+\index{GetOverallGraphicsQuality@{GetOverallGraphicsQuality}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{GetOverallGraphicsQuality()}{GetOverallGraphicsQuality()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_aa4eb1571e3e55f276bdd930b34ea0208} 
+int32 UGraphics\+Sub\+System\+::\+Get\+Overall\+Graphics\+Quality (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Obtiene el nivel de calidad global actual (-\/1 si la calidad es personalizada por componente). \Hypertarget{class_u_graphics_sub_system_af3826e84d06acc33278ec9bc3a527f11}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!GetScreenResolution@{GetScreenResolution}}
+\index{GetScreenResolution@{GetScreenResolution}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{GetScreenResolution()}{GetScreenResolution()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_af3826e84d06acc33278ec9bc3a527f11} 
+FInt\+Point UGraphics\+Sub\+System\+::\+Get\+Screen\+Resolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Obtiene la resolución actual configurada en Game\+User\+Settings. \Hypertarget{class_u_graphics_sub_system_a11f7341405eef769d2906cdd69365412}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!GetSupportedScreenResolutions@{GetSupportedScreenResolutions}}
+\index{GetSupportedScreenResolutions@{GetSupportedScreenResolutions}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{GetSupportedScreenResolutions()}{GetSupportedScreenResolutions()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a11f7341405eef769d2906cdd69365412} 
+TArray$<$ \mbox{\hyperlink{struct_f_supported_resolution}{FSupported\+Resolution}} $>$ UGraphics\+Sub\+System\+::\+Get\+Supported\+Screen\+Resolutions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Consulta al driver/hardware (RHI) y devuelve únicamente las resoluciones soportadas por la pantalla. Filtra duplicados con distintas tasas de refresco para dejar solo resoluciones únicas. \Hypertarget{class_u_graphics_sub_system_ab08268ee7e043e9ae5625b77ad75826d}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!RunHardwareBenchmark@{RunHardwareBenchmark}}
+\index{RunHardwareBenchmark@{RunHardwareBenchmark}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{RunHardwareBenchmark()}{RunHardwareBenchmark()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_ab08268ee7e043e9ae5625b77ad75826d} 
+void UGraphics\+Sub\+System\+::\+Run\+Hardware\+Benchmark (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Restablece los ajustes a los valores recomendados por el motor según el hardware detectado. \Hypertarget{class_u_graphics_sub_system_ae0c520fd9be8b989843c92e9ff75d734}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SaveAndApplySettings@{SaveAndApplySettings}}
+\index{SaveAndApplySettings@{SaveAndApplySettings}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SaveAndApplySettings()}{SaveAndApplySettings()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_ae0c520fd9be8b989843c92e9ff75d734} 
+void UGraphics\+Sub\+System\+::\+Save\+And\+Apply\+Settings (\begin{DoxyParamCaption}\item[{bool}]{b\+Check\+For\+Command\+Line\+Overrides}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+Guarda las configuraciones actuales en el archivo de configuración (.ini) y las aplica en pantalla. \Hypertarget{class_u_graphics_sub_system_a922ab3e6f97470d0060f34b4cfaea95c}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetFrameRateLimit@{SetFrameRateLimit}}
+\index{SetFrameRateLimit@{SetFrameRateLimit}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetFrameRateLimit()}{SetFrameRateLimit()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a922ab3e6f97470d0060f34b4cfaea95c} 
+void UGraphics\+Sub\+System\+::\+Set\+Frame\+Rate\+Limit (\begin{DoxyParamCaption}\item[{float}]{Frame\+Rate}{}\end{DoxyParamCaption})}
+
+Configura el límite de FPS del juego (0 = Ilimitado). \Hypertarget{class_u_graphics_sub_system_a557ac16f538b9822834cdbaa1386bd57}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetOverallGraphicsQuality@{SetOverallGraphicsQuality}}
+\index{SetOverallGraphicsQuality@{SetOverallGraphicsQuality}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetOverallGraphicsQuality()}{SetOverallGraphicsQuality()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a557ac16f538b9822834cdbaa1386bd57} 
+void UGraphics\+Sub\+System\+::\+Set\+Overall\+Graphics\+Quality (\begin{DoxyParamCaption}\item[{int32}]{Quality\+Level}{}\end{DoxyParamCaption})}
+
+Modifica el nivel de calidad global de Scalability (0 = Low, 1 = Medium, 2 = High, 3 = Epic, 4 = Cinematic). Aplica a Sombras, Texturas, Anti-\/\+Aliasing, Post-\/\+Procesado, FX, Iluminación, etc. \Hypertarget{class_u_graphics_sub_system_a0b9d682451bfe3d178ae19ca2bd0add1}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetResolutionScale@{SetResolutionScale}}
+\index{SetResolutionScale@{SetResolutionScale}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetResolutionScale()}{SetResolutionScale()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a0b9d682451bfe3d178ae19ca2bd0add1} 
+void UGraphics\+Sub\+System\+::\+Set\+Resolution\+Scale (\begin{DoxyParamCaption}\item[{float}]{Scale\+Percentage}{}\end{DoxyParamCaption})}
+
+Configura la escala de renderizado (View Distance / Rendering Scale) de 10\% a 100\%. \Hypertarget{class_u_graphics_sub_system_ab42c28e06e7e86ebdae7a6c96898f266}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetScreenResolution@{SetScreenResolution}}
+\index{SetScreenResolution@{SetScreenResolution}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetScreenResolution()}{SetScreenResolution()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_ab42c28e06e7e86ebdae7a6c96898f266} 
+void UGraphics\+Sub\+System\+::\+Set\+Screen\+Resolution (\begin{DoxyParamCaption}\item[{FInt\+Point}]{Resolution}{, }\item[{EWindow\+Mode\+::\+Type}]{Window\+Mode}{}\end{DoxyParamCaption})}
+
+Aplica una nueva resolución de pantalla y el modo de ventana especificado. \Hypertarget{class_u_graphics_sub_system_a5144d741a5563e868c6ec24b79f0de27}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetShadowQuality@{SetShadowQuality}}
+\index{SetShadowQuality@{SetShadowQuality}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetShadowQuality()}{SetShadowQuality()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a5144d741a5563e868c6ec24b79f0de27} 
+void UGraphics\+Sub\+System\+::\+Set\+Shadow\+Quality (\begin{DoxyParamCaption}\item[{int32}]{Quality\+Level}{}\end{DoxyParamCaption})}
+
+Configura la calidad de sombras de forma individual. \Hypertarget{class_u_graphics_sub_system_a53318c0c060eb73b9afd30bdcf8aacee}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetTextureQuality@{SetTextureQuality}}
+\index{SetTextureQuality@{SetTextureQuality}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetTextureQuality()}{SetTextureQuality()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_a53318c0c060eb73b9afd30bdcf8aacee} 
+void UGraphics\+Sub\+System\+::\+Set\+Texture\+Quality (\begin{DoxyParamCaption}\item[{int32}]{Quality\+Level}{}\end{DoxyParamCaption})}
+
+Configura la calidad de texturas de forma individual. \Hypertarget{class_u_graphics_sub_system_aa044e0da554e8e54dbd3e59b0e794217}\index{UGraphicsSubSystem@{UGraphicsSubSystem}!SetVSyncEnabled@{SetVSyncEnabled}}
+\index{SetVSyncEnabled@{SetVSyncEnabled}!UGraphicsSubSystem@{UGraphicsSubSystem}}
+\doxysubsubsection{\texorpdfstring{SetVSyncEnabled()}{SetVSyncEnabled()}}
+{\footnotesize\ttfamily \label{class_u_graphics_sub_system_aa044e0da554e8e54dbd3e59b0e794217} 
+void UGraphics\+Sub\+System\+::\+Set\+VSync\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable}{}\end{DoxyParamCaption})}
+
+Configura la sincronización vertical (VSync). 
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/exepa/\+Desktop/\+Sub\+Systems\+UE/\+Source/\+Sub\+Systems/\+Public/Graphics\+Sub\+System.\+h\item 
-C\+:/\+Users/exepa/\+Desktop/\+Sub\+Systems\+UE/\+Source/\+Sub\+Systems/\+Private/Graphics\+Sub\+System.\+cpp\end{DoxyCompactItemize}
+C\+:/01\+\_\+\+ACTIVO/\+Plugin58/\+Plugins/\+Sub\+Systems\+Plugin\+UE/\+Source/\+Sub\+Systems/\+Public/Graphics\+Sub\+System.\+h\item 
+C\+:/01\+\_\+\+ACTIVO/\+Plugin58/\+Plugins/\+Sub\+Systems\+Plugin\+UE/\+Source/\+Sub\+Systems/\+Private/Graphics\+Sub\+System.\+cpp\end{DoxyCompactItemize}

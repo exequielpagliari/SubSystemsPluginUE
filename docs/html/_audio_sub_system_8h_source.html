@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SubSystemUE: C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/AudioSubSystem.h Source File</title>
+<title>SubSystemUE: C:/01_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/AudioSubSystem.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,39 +111,76 @@ $(function(){initNavTree('_audio_sub_system_8h_source.html',''); initResizable(t
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;CoreMinimal.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Subsystems/GameInstanceSubsystem.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;AudioSubSystem.generated.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>UCLASS(Abstract, Blueprintable,BlueprintType)</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_u_audio_sub_system.html">   13</a></span>class SUBSYSTEMS_API <a class="code hl_class" href="class_u_audio_sub_system.html">UAudioSubSystem</a> : public UGameInstanceSubsystem</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> UWorld* GetWorld()<span class="keyword"> const override</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (IsTemplate() || !GetOuter())</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> GetOuter()-&gt;GetWorld();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ShouldCreateSubsystem(UObject* Outer) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Begin USubsystem</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Initialize(FSubsystemCollectionBase&amp; Collection) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Deinitialize() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// End USubsystem</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    UFUNCTION(BlueprintImplementableEvent, Category = <span class="stringliteral">&quot;Events&quot;</span>, meta = (DisplayName = <span class="stringliteral">&quot;On Initialize&quot;</span>))</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> ReceiveInitialize();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    UFUNCTION(BlueprintImplementableEvent, Category = <span class="stringliteral">&quot;Events&quot;</span>, meta = (DisplayName = <span class="stringliteral">&quot;On Deinitialize&quot;</span>))</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> ReceiveDeinitialize();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Sound/SoundClass.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Sound/SoundMix.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;AudioSubSystem.generated.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>USoundBase;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>UAudioComponent;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>UCLASS(Abstract, Blueprintable,BlueprintType)</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_u_audio_sub_system.html">   18</a></span>class SUBSYSTEMS_API <a class="code hl_class" href="class_u_audio_sub_system.html">UAudioSubSystem</a> : public UGameInstanceSubsystem</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> UWorld* GetWorld()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (IsTemplate() || !GetOuter())</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> GetOuter()-&gt;GetWorld();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = <span class="stringliteral">&quot;Audio|Config&quot;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_u_audio_sub_system.html#a0e0ff6157f7b15cc07e8c2a1748980a6">   34</a></span>    TObjectPtr&lt;USoundMix&gt; <a class="code hl_variable" href="class_u_audio_sub_system.html#a0e0ff6157f7b15cc07e8c2a1748980a6">MainSoundMix</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>public:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    virtual <span class="keywordtype">bool</span> ShouldCreateSubsystem(UObject* Outer) const;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Begin USubsystem</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    virtual <span class="keywordtype">void</span> Initialize(FSubsystemCollectionBase&amp; Collection) override;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    virtual <span class="keywordtype">void</span> Deinitialize() override;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// End USubsystem</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    UFUNCTION(BlueprintImplementableEvent, Category = <span class="stringliteral">&quot;Events&quot;</span>, meta = (DisplayName = <span class="stringliteral">&quot;On Initialize&quot;</span>))</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> ReceiveInitialize();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    UFUNCTION(BlueprintImplementableEvent, Category = <span class="stringliteral">&quot;Events&quot;</span>, meta = (DisplayName = <span class="stringliteral">&quot;On Deinitialize&quot;</span>))</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> ReceiveDeinitialize();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// --- Control de Música Global ---</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Audio|Music&quot;</span>)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_audio_sub_system.html#a2e41158c35660e5b8f2e41f1e892d4af">PlayMusic</a>(USoundBase* NewTrack, <span class="keywordtype">float</span> FadeInTime = 1.5f, <span class="keywordtype">float</span> FadeOutTime = 1.5f, <span class="keywordtype">bool</span> bLoop = true);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Audio|Music&quot;</span>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_audio_sub_system.html#addedc0dad70a86721de4b3afde6acd3c">StopMusic</a>(<span class="keywordtype">float</span> FadeOutTime = 1.5f);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// --- Control de Sonidos 2D / UI ---</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Audio|SFX&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_audio_sub_system.html#a504605fc502f0d64e6e5e8a1d811a36e">PlaySound2D</a>(USoundBase* Sound, <span class="keywordtype">float</span> VolumeMultiplier = 1.0f, <span class="keywordtype">float</span> PitchMultiplier = 1.0f);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// --- Control de Volumen por Canales ---</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Audio|Volume&quot;</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_audio_sub_system.html#a4e2029099a92d7334af111bccf177833">SetChannelVolume</a>(USoundClass* TargetClass, <span class="keywordtype">float</span> Volume);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>private:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    UPROPERTY(Transient)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    TObjectPtr&lt;UAudioComponent&gt; CurrentMusicComponent;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> OnMusicFadeOutFinished(UAudioComponent* OldComponent);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 </div>
-<div class="ttc" id="aclass_u_audio_sub_system_html"><div class="ttname"><a href="class_u_audio_sub_system.html">UAudioSubSystem</a></div><div class="ttdef"><b>Definition</b> AudioSubSystem.h:14</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html"><div class="ttname"><a href="class_u_audio_sub_system.html">UAudioSubSystem</a></div><div class="ttdef"><b>Definition</b> AudioSubSystem.h:19</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html_a0e0ff6157f7b15cc07e8c2a1748980a6"><div class="ttname"><a href="class_u_audio_sub_system.html#a0e0ff6157f7b15cc07e8c2a1748980a6">UAudioSubSystem::MainSoundMix</a></div><div class="ttdeci">TObjectPtr&lt; USoundMix &gt; MainSoundMix</div><div class="ttdef"><b>Definition</b> AudioSubSystem.h:34</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html_a2e41158c35660e5b8f2e41f1e892d4af"><div class="ttname"><a href="class_u_audio_sub_system.html#a2e41158c35660e5b8f2e41f1e892d4af">UAudioSubSystem::PlayMusic</a></div><div class="ttdeci">void PlayMusic(USoundBase *NewTrack, float FadeInTime=1.5f, float FadeOutTime=1.5f, bool bLoop=true)</div><div class="ttdef"><b>Definition</b> AudioSubSystem.cpp:47</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html_a4e2029099a92d7334af111bccf177833"><div class="ttname"><a href="class_u_audio_sub_system.html#a4e2029099a92d7334af111bccf177833">UAudioSubSystem::SetChannelVolume</a></div><div class="ttdeci">void SetChannelVolume(USoundClass *TargetClass, float Volume)</div><div class="ttdef"><b>Definition</b> AudioSubSystem.cpp:96</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html_a504605fc502f0d64e6e5e8a1d811a36e"><div class="ttname"><a href="class_u_audio_sub_system.html#a504605fc502f0d64e6e5e8a1d811a36e">UAudioSubSystem::PlaySound2D</a></div><div class="ttdeci">void PlaySound2D(USoundBase *Sound, float VolumeMultiplier=1.0f, float PitchMultiplier=1.0f)</div><div class="ttdef"><b>Definition</b> AudioSubSystem.cpp:86</div></div>
+<div class="ttc" id="aclass_u_audio_sub_system_html_addedc0dad70a86721de4b3afde6acd3c"><div class="ttname"><a href="class_u_audio_sub_system.html#addedc0dad70a86721de4b3afde6acd3c">UAudioSubSystem::StopMusic</a></div><div class="ttdeci">void StopMusic(float FadeOutTime=1.5f)</div><div class="ttdef"><b>Definition</b> AudioSubSystem.cpp:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

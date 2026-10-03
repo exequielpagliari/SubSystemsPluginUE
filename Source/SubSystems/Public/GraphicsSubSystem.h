@@ -26,7 +26,7 @@ struct FSupportedResolution
 /**
  *
  */
-    UCLASS(Blueprintable)
+    UCLASS(Blueprintable, BlueprintType)
     class SUBSYSTEMS_API UGraphicsSubSystem : public UGameInstanceSubsystem
 {
     GENERATED_BODY()

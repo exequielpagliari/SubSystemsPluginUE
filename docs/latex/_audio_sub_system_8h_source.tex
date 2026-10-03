@@ -1,5 +1,5 @@
 \doxysection{Audio\+Sub\+System.\+h}
-\hypertarget{_audio_sub_system_8h_source}{}\label{_audio_sub_system_8h_source}\index{C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/AudioSubSystem.h@{C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/AudioSubSystem.h}}
+\hypertarget{_audio_sub_system_8h_source}{}\label{_audio_sub_system_8h_source}\index{C:/01\_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/AudioSubSystem.h@{C:/01\_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/AudioSubSystem.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
@@ -8,35 +8,67 @@
 \DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Subsystems/GameInstanceSubsystem.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}AudioSubSystem.generated.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00012\ UCLASS(Abstract,\ Blueprintable,BlueprintType)}
-\DoxyCodeLine{00013\ class\ SUBSYSTEMS\_API\ \mbox{\hyperlink{class_u_audio_sub_system}{UAudioSubSystem}}\ :\ public\ UGameInstanceSubsystem}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ GENERATED\_BODY()}
-\DoxyCodeLine{00016\ \ \ \ \ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ UWorld*\ GetWorld()\textcolor{keyword}{\ const\ override}}
-\DoxyCodeLine{00019\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTemplate()\ ||\ !GetOuter())}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetOuter()-\/>GetWorld();}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ ShouldCreateSubsystem(UObject*\ Outer)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Begin\ USubsystem}}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize(FSubsystemCollectionBase\&\ Collection)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Deinitialize()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ End\ USubsystem}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Initialize"{}}))}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveInitialize();}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Deinitialize"{}}))}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveDeinitialize();}
-\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Sound/SoundClass.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Sound/SoundMix.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}AudioSubSystem.generated.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }USoundBase;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }UAudioComponent;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ UCLASS(Abstract,\ Blueprintable,BlueprintType)}
+\DoxyCodeLine{00018\ class\ SUBSYSTEMS\_API\ \mbox{\hyperlink{class_u_audio_sub_system}{UAudioSubSystem}}\ :\ public\ UGameInstanceSubsystem}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ UWorld*\ GetWorld()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTemplate()\ ||\ !GetOuter())}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetOuter()-\/>GetWorld();}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Audio|Config"{}})}
+\DoxyCodeLine{00034\ \ \ \ \ TObjectPtr<USoundMix>\ \mbox{\hyperlink{class_u_audio_sub_system_a0e0ff6157f7b15cc07e8c2a1748980a6}{MainSoundMix}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ public:}
+\DoxyCodeLine{00037\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ ShouldCreateSubsystem(UObject*\ Outer)\ const;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Begin\ USubsystem}}
+\DoxyCodeLine{00039\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ Initialize(FSubsystemCollectionBase\&\ Collection)\ override;}
+\DoxyCodeLine{00040\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ Deinitialize()\ override;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ End\ USubsystem}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Initialize"{}}))}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveInitialize();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Deinitialize"{}}))}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveDeinitialize();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Control\ de\ Música\ Global\ -\/-\/-\/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Audio|Music"{}})}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_audio_sub_system_a2e41158c35660e5b8f2e41f1e892d4af}{PlayMusic}}(USoundBase*\ NewTrack,\ \textcolor{keywordtype}{float}\ FadeInTime\ =\ 1.5f,\ \textcolor{keywordtype}{float}\ FadeOutTime\ =\ 1.5f,\ \textcolor{keywordtype}{bool}\ bLoop\ =\ true);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Audio|Music"{}})}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_audio_sub_system_addedc0dad70a86721de4b3afde6acd3c}{StopMusic}}(\textcolor{keywordtype}{float}\ FadeOutTime\ =\ 1.5f);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Control\ de\ Sonidos\ 2D\ /\ UI\ -\/-\/-\/}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Audio|SFX"{}})}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_audio_sub_system_a504605fc502f0d64e6e5e8a1d811a36e}{PlaySound2D}}(USoundBase*\ Sound,\ \textcolor{keywordtype}{float}\ VolumeMultiplier\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ PitchMultiplier\ =\ 1.0f);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Control\ de\ Volumen\ por\ Canales\ -\/-\/-\/}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Audio|Volume"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_audio_sub_system_a4e2029099a92d7334af111bccf177833}{SetChannelVolume}}(USoundClass*\ TargetClass,\ \textcolor{keywordtype}{float}\ Volume);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ private:}
+\DoxyCodeLine{00073\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00074\ \ \ \ \ TObjectPtr<UAudioComponent>\ CurrentMusicComponent;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ OnMusicFadeOutFinished(UAudioComponent*\ OldComponent);}
+\DoxyCodeLine{00078\ \};}
 
 \end{DoxyCode}

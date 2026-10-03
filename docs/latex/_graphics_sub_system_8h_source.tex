@@ -1,5 +1,5 @@
 \doxysection{Graphics\+Sub\+System.\+h}
-\hypertarget{_graphics_sub_system_8h_source}{}\label{_graphics_sub_system_8h_source}\index{C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/GraphicsSubSystem.h@{C:/Users/exepa/Desktop/SubSystemsUE/Source/SubSystems/Public/GraphicsSubSystem.h}}
+\hypertarget{_graphics_sub_system_8h_source}{}\label{_graphics_sub_system_8h_source}\index{C:/01\_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/GraphicsSubSystem.h@{C:/01\_ACTIVO/Plugin58/Plugins/SubSystemsPluginUE/Source/SubSystems/Public/GraphicsSubSystem.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
@@ -10,31 +10,89 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Subsystems/GameInstanceSubsystem.h"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GraphicsSubSystem.generated.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00012\ \ \ \ \ UCLASS(Abstract,\ Blueprintable)}
-\DoxyCodeLine{00013\ \ \ \ \ class\ SUBSYSTEMS\_API\ \mbox{\hyperlink{class_u_graphics_sub_system}{UGraphicsSubSystem}}\ :\ public\ UGameInstanceSubsystem}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ GENERATED\_BODY()}
-\DoxyCodeLine{00016\ \ \ \ \ }
-\DoxyCodeLine{00017\ \ \ \ \ UWorld*\ GetWorld()\textcolor{keyword}{\ const\ override}}
-\DoxyCodeLine{00018\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTemplate()\ ||\ !GetOuter())}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetOuter()-\/>GetWorld();}
-\DoxyCodeLine{00024\ \ \ \ \ \}}
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Begin\ USubsystem}}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize(FSubsystemCollectionBase\&\ Collection)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Deinitialize()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ End\ USubsystem}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Initialize"{}}))}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveInitialize();}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Deinitialize"{}}))}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveDeinitialize();}
-\DoxyCodeLine{00036\ \};}
-\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00010\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00011\ struct\ \mbox{\hyperlink{struct_f_supported_resolution}{FSupportedResolution}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics"{}})}
+\DoxyCodeLine{00016\ \ \ \ \ int32\ Width\ =\ 0;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics"{}})}
+\DoxyCodeLine{00019\ \ \ \ \ int32\ Height\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics"{}})}
+\DoxyCodeLine{00023\ \ \ \ \ FString\ \mbox{\hyperlink{struct_f_supported_resolution_a925030745993087d38fb77f103eb3c8d}{DisplayName}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ UCLASS(Blueprintable,\ BlueprintType)}
+\DoxyCodeLine{00030\ \ \ \ \ class\ SUBSYSTEMS\_API\ \mbox{\hyperlink{class_u_graphics_sub_system}{UGraphicsSubSystem}}\ :\ public\ UGameInstanceSubsystem}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ UWorld*\ GetWorld()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTemplate()\ ||\ !GetOuter())}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetOuter()-\/>GetWorld();}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Begin\ USubsystem}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize(FSubsystemCollectionBase\&\ Collection)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Deinitialize()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ End\ USubsystem}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Initialize"{}}))}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveInitialize();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ UFUNCTION(BlueprintImplementableEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Events"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}On\ Deinitialize"{}}))}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ ReceiveDeinitialize();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Pantalla\ y\ Resolución -\/-\/-\/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Display"{}})}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_ab42c28e06e7e86ebdae7a6c96898f266}{SetScreenResolution}}(FIntPoint\ Resolution,\ EWindowMode::Type\ WindowMode);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Display"{}})}
+\DoxyCodeLine{00061\ \ \ \ \ FIntPoint\ \mbox{\hyperlink{class_u_graphics_sub_system_af3826e84d06acc33278ec9bc3a527f11}{GetScreenResolution}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Display"{}})}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_a922ab3e6f97470d0060f34b4cfaea95c}{SetFrameRateLimit}}(\textcolor{keywordtype}{float}\ FrameRate);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Display"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_aa044e0da554e8e54dbd3e59b0e794217}{SetVSyncEnabled}}(\textcolor{keywordtype}{bool}\ bEnable);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Scalability\ Settings\ -\/-\/-\/}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Scalability"{}})}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_a557ac16f538b9822834cdbaa1386bd57}{SetOverallGraphicsQuality}}(int32\ QualityLevel);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Scalability"{}})}
+\DoxyCodeLine{00082\ \ \ \ \ int32\ \mbox{\hyperlink{class_u_graphics_sub_system_aa4eb1571e3e55f276bdd930b34ea0208}{GetOverallGraphicsQuality}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Scalability"{}})}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_a5144d741a5563e868c6ec24b79f0de27}{SetShadowQuality}}(int32\ QualityLevel);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Scalability"{}})}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_a53318c0c060eb73b9afd30bdcf8aacee}{SetTextureQuality}}(int32\ QualityLevel);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Scalability"{}})}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_a0b9d682451bfe3d178ae19ca2bd0add1}{SetResolutionScale}}(\textcolor{keywordtype}{float}\ ScalePercentage);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ UFUNCTION(BlueprintPure,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Display"{}})}
+\DoxyCodeLine{00101\ \ \ \ \ TArray<FSupportedResolution>\ \mbox{\hyperlink{class_u_graphics_sub_system_a11f7341405eef769d2906cdd69365412}{GetSupportedScreenResolutions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Aplicación y\ Persistencia\ -\/-\/-\/}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Settings"{}})}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_ae0c520fd9be8b989843c92e9ff75d734}{SaveAndApplySettings}}(\textcolor{keywordtype}{bool}\ bCheckForCommandLineOverrides\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Graphics|Settings"{}})}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_graphics_sub_system_ab08268ee7e043e9ae5625b77ad75826d}{RunHardwareBenchmark}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ \ \ UGameUserSettings*\ GetUserSettings()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ \};}
 
 \end{DoxyCode}
